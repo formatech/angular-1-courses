@@ -1,5 +1,5 @@
 angular.module('app')
-    .factory('todosServiceMock', function ($timeout) {
+    .factory('todosServiceMock', ['$timeout', function ($timeout) {
 
         return {
             getTodos: function () {
@@ -31,4 +31,4 @@ angular.module('app')
             }
         }
 
-    });
+    }]);

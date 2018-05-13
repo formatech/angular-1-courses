@@ -1,0 +1,20 @@
+<div>
+    <form ng-submit="addNewTodo()">
+        <div class="form-group">
+            <label>Add Task</label>
+            <input class="form-control" id="newTodo" type="text" ng-model="newTodo">
+        </div>
+    </form>
+    <div class="form-group">
+        <input class="form-control" placeholder="Search ..." type="text" ng-model="search">
+    </div>
+    <ul>
+        <li ng-repeat="item in todos | filter:search" ng-class="{done : item.isDone}">
+            <label>
+                <input type="checkbox" ng-model="item.isDone">
+                <span>{{ item.text | uppercase | mr }}</span>
+                <span>{{ item.date | date }}</span>
+            </label>
+        </li>
+    </ul>
+</div>
