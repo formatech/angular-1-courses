@@ -3,12 +3,16 @@ angular.module('app')
         $locationProvider.hashPrefix('!');
         $routeProvider.when('/todos', {
             controller: 'todosCtrl',
-            templateUrl: '/views/todos.html'
+            templateUrl: 'views/todos.html'
         }).when('/', {
             redirectTo: '/todos'
         }).when('/books', {
             template: `BOOKS TEMPLATE`
         });
 
-
     }])
+    .run(['$templateCache', function ($templateCache) {
+
+        $templateCache.put('views/todos.html', 'TODO TMEPLTA')
+
+    }]);

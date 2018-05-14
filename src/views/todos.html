@@ -1,8 +1,12 @@
 <div>
+
+    <list title="Users" data="list" on-click="onClick(item, order)" on-remove="onRemove(item)"></list>
+
+
     <form ng-submit="addNewTodo()">
         <div class="form-group">
             <label>Add Task</label>
-            <input class="form-control" id="newTodo" type="text" ng-model="newTodo">
+            <input required class="form-control" id="newTodo" type="text" ng-model="newTodo">
         </div>
     </form>
     <div class="form-group">
