@@ -1,0 +1,25 @@
+body {
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.app {
+    height: 100vh;;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    min-height: 100px;
+    background-color: #eee;
+}
+
+.footer {
+    min-height: 100px;
+    background-color: #eee;
+}

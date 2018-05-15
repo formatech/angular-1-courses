@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
 
     <list title="Users" data="list" on-click="onClick(item, order)" on-remove="onRemove(item)"></list>
 
@@ -12,6 +13,16 @@
     <div class="form-group">
         <input class="form-control" placeholder="Search ..." type="text" ng-model="search">
     </div>
+=======
+    <!-- <pre>{{ todos | json }}</pre> -->
+    <form ng-submit="addNewTodo()">
+        Add new task
+        <input id="newTodo" type="text" ng-model="newTodo">
+    </form>
+    <p>
+        <input placeholder="Search ..." type="text" ng-model="search">
+    </p>
+>>>>>>> session-03
     <ul>
         <li ng-repeat="item in todos | filter:search" ng-class="{done : item.isDone}">
             <label>

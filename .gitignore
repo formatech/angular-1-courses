@@ -1,4 +1,4 @@
+/dist/
 /node_modules/
-/lib/angular/docs/
-/lib/angular/i18n/
-/dist
+/src/lib/angular/docs
+/src/lib/angular/i18n

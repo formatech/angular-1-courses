@@ -8,6 +8,7 @@ angular.module('app')
             $scope.todos = todos;
         });
 
+<<<<<<< HEAD:src/app/todos/todos.controller.js
         $scope.list = [
             'a',
             'b',
@@ -24,12 +25,14 @@ angular.module('app')
         }
 
 
+=======
+>>>>>>> session-03:src/app/todos/todos.controller.js
         $scope.addNewTodo = function () {
 
             var text = $scope.newTodo;
 
             $scope.todos.push({
-                text: text,
+                text: plural(text),
                 isDone: false
             });
 
