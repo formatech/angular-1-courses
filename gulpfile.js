@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglifyes');
+const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-html-minifier');
 const templateCache = require('gulp-angular-templatecache');
 
