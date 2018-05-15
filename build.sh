@@ -1,6 +1,3 @@
-SRC=src
-DIST=dist
-
 echo 'Building my app ...'
 echo 'Cleaning dist'
 rm -rf $DIST/*

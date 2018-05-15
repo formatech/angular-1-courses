@@ -6,13 +6,12 @@ angular.module('app')
             $scope.todos = todos;
         });
 
-
         $scope.addNewTodo = function () {
 
             var text = $scope.newTodo;
 
             $scope.todos.push({
-                text: text,
+                text: plural(text),
                 isDone: false
             });
 
