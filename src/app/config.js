@@ -7,6 +7,7 @@ angular.module('app')
         }).when('/', {
             redirectTo: '/todos'
         }).when('/books', {
-            template: `BOOKS TEMPLATE`
+            controller: 'BooksCtrl',
+            templateUrl: '/views/books.html'
         });
     }]);

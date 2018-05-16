@@ -23,3 +23,28 @@ body {
     min-height: 100px;
     background-color: #eee;
 }
+
+.market {
+    background: #b6b6b6;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.market > .book {
+    background-color: green;
+}
+
+.horor {
+    background-color: red;
+}
+
+.book {
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 150px;
+    border-radius: 3px;
+}

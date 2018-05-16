@@ -3,13 +3,16 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-html-minifier');
 const templateCache = require('gulp-angular-templatecache');
+const sourcemaps = require('gulp-sourcemaps');
 
 // Compress JavaScript using Uglify
 gulp.task('js', ['views'], function () {
 
     return gulp.src(['src/app/**/*.js', 'dist/templates.js'])
+        .pipe(sourcemaps.init())
         .pipe(concat('app.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
+        .pipe(sourcemaps.write('.', { addComment: true }))
         .pipe(gulp.dest('dist'));
 
 });

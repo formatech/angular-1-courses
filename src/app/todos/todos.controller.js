@@ -1,8 +1,11 @@
 
 angular.module('app')
-    .controller('todosCtrl', ['$scope', 'todosService', function ($scope, myTodos) {
+    .controller('todosCtrl', [
+        '$scope', 'todosService', 'filterFilter', function ($scope, myTodos, filterFilter) {
 
-        console.log($scope.$id);
+            console.log(filterFilter(['ahmad', 'maroun', 'mikel'], 'a'));
+
+        // console.log(mrFilter('gabi', 'mikeal'), $scope.$id);
 
         myTodos.getTodos().then(function (todos) {
             $scope.todos = todos;

@@ -14,3 +14,12 @@ to install gulp:
 ```sh
 npm i gulp gulp-concat gulp-uglify gulp-html-minifier gulp-angular-templatecache --save-dev
 ```
+
+# Session 04
+Directives:
+ - User controls to defined new elements `restrict: 'E'`
+ - Decorators to extend existing elements `restrict: 'A'`
+
+Isolate scope by passing `scope: true`
+
+Replace content with element by passing `replace: true`

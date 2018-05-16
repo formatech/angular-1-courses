@@ -1,0 +1,30 @@
+<hr>
+
+<div class="row">
+    <!-- <div class="col-md-3">A</div> -->
+    <!-- <div class="col-md-3">b</div> -->
+    <!-- <div class="col-md-3">c</div> -->
+    <!-- <div class="col-md-3">d</div> -->
+    <bcol></bcol>
+    <bcol></bcol>
+    <bcol></bcol>
+    <bcol></bcol>
+</div>
+
+<hr>
+
+<div class="market">
+    <book item="book" ng-repeat="book in books"></book>
+    <book item="books[0]"></book>
+
+    <div class="horor">
+        <book shareable item="books[2]"></book>
+    </div>
+</div>
+
+
+<book shareable item="books[2]"></book>
+<book out-of-stock item="books[1]"></book>
+
+
+<div shareable>shi b2albo</div>

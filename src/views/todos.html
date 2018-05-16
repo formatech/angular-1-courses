@@ -1,5 +1,4 @@
 <div>
-    <!-- <pre>{{ todos | json }}</pre> -->
     <form ng-submit="addNewTodo()">
         Add new task
         <input id="newTodo" type="text" ng-model="newTodo">
@@ -7,6 +6,7 @@
     <p>
         <input placeholder="Search ..." type="text" ng-model="search">
     </p>
+    <pre>{{ search }}</pre>
     <ul>
         <li ng-repeat="item in todos | filter:search" ng-class="{done : item.isDone}">
             <label>
