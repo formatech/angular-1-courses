@@ -1,41 +1,3 @@
-angular.module('app')
-    .directive('kkkrequired', function () {
-        return {
-            restrict: 'A',
-            link: function ($scope, $el) {
-                console.log($scope.$id);
-                $el.prev('label').html((i, html) => html + ' <sup class="star">*</sup>')
-                $el.css('borderColor', 'red');
-            }
-        };
-    })
-    .directive('list', function () {
-        return {
-            restrict: 'E',
-            template: `
-                <h1>{{ title }}</h1>
-
-                <ul class="list-group">
-                    <li ng-repeat="v in data"
-                    ng-click="onClick({item: v, order: $index})" class="list-group-item">
-                        {{ v }}
-                        <button ng-click="onRemove({item: v})" type="button" class="btn btn-danger">X</button>
-                    </li>
-                </ul>
-            `,
-            scope: {
-                title: '@',
-                data: '=',
-                onClick: '&',
-                onRemove: '&',
-            },
-            scope: false,
-            link: function ($scope, $el) {
-                console.log($scope.$id);
-            }
-        }
-    })
-
 angular.module('app').directive('required', function () {
     return {
         restrict: 'A',
@@ -47,20 +9,39 @@ angular.module('app').directive('required', function () {
 
         }
     }
-}).directive('book', ['todosService', function (todosService) {
+}).directive('book', ['todosService', 'bus', '$rootScope', 'userSettings', function (todosService, bus, $rootScope, userSettings) {
     return {
+        transclude: true,
         restrict: 'E',
         template: `
 <div class="book">
+
     <h4 ng-click="color='red'" style="color: {{color}}">{{ item.id }}.{{ item.name || 'No Name' }}</h4>
+
     <small>Views: {{ item.views }}</small>
+    <small>Price: {{ item.price | number }} {{currency }}</small>
+
+   <!-- <button ng-click="addToBasket({item: item, views: item.views})" class="btn btn-default"><i class="fa fa-check"></i></button> -->
+    <button ng-click="triggerEvent('bookAdded', item)" class="btn btn-default"><i class="fa fa-check"></i></button>
+
+    before
+    <div ng-transclude></div>
+    after
+
 </div>
         `,
         scope: {
             // item: '@', // scope.item = 'books[0]'
-            item: '=', // scope.item = { id, name, view }
+            item: '=bookData', // scope.item = { id, name, view }
+
+            addToBasket: '&onAdd'
+
         },
         link: function (scope, el, attrs) {
+
+            scope.$on('scope-event', function () {
+                console.log('receiving a message from another book')
+            })
 
             console.log(todosService)
 
@@ -69,6 +50,11 @@ angular.module('app').directive('required', function () {
             // scope.id = attrs.id;
             // scope.name = attrs.name;
             // scope.views = attrs.views;
+
+            scope.triggerEvent = function (event, data) {
+                scope.$emit('scope-event');
+                bus.emit(event, data);
+            }
 
         }
     }
@@ -105,3 +91,14 @@ angular.module('app').directive('required', function () {
             }
         }
     }])
+    .directive('basket', function () {
+        return {
+            restrict: 'E',
+            scope: true,
+            link: function (scope) {
+                scope.$on('scope-event', function () {
+                    console.log('listening from basket');
+                })
+            }
+        }
+    })

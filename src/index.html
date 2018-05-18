@@ -9,18 +9,34 @@
     <title>Angular One Todo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+
+
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/angular-route.js"></script>
 
+    <script src="/lib/bus.js"></script>
     <script src="/app/helper.js"></script>
+    <script src="/lib/ng-grid.js"></script>
     <script src="/app/app.js"></script>
+
+    <!-- <?php if($user): ?> -->
+    <script>
+        angular.module('app').constant('userSettings', { user: 'gabi', currency: 'USD' })
+        angular.module('app').constant('stripeApiKey', 'asldhjasl;d89')
+        angular.module('app').constant('facebookSdk', 'asldhjasl;d89')
+        angular.module('app').constant('assetsUrl', 'https://s3.amazon.com/')
+    </script>
+    <!-- <?php endif ?> -->
+
     <script src="/app/config.js"></script>
     <script src="/app/mr.filter.js"></script>
     <script src="/app/directives.js"></script>
     <script src="/app/todos/todos.controller.js"></script>
     <script src="/app/books/books.controller.js"></script>
+    <script src="/app/grid/grid.controller.js"></script>
     <script src="/app/todos/todos.service.js"></script>
     <script src="/app/todos/todos.service.mock.js"></script>
 </head>
@@ -31,6 +47,7 @@
             <a href="/#!/">Home</a>
             <a href="/#!/todos">Todos</a>
             <a href="/#!/books">Books</a>
+            <a href="/#!/grid">Grid</a>
         </nav>
     </div>
 

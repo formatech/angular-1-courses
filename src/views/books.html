@@ -13,18 +13,30 @@
 
 <hr>
 
-<div class="market">
-    <book item="book" ng-repeat="book in books"></book>
-    <book item="books[0]"></book>
+<div class="app">
+    <div class="row">
+        <div class="col-md-3">
 
-    <div class="horor">
-        <book shareable item="books[2]"></book>
+            <basket></basket>
+
+            <div ng-repeat="v in booksAdded">{{ v.name }}</div>
+
+        </div>
+        <div class="col-md-9">
+
+            <div class="market">
+
+                <book book-data="book" ng-repeat="book in books" on-add="onBookAdded(item, views)"></book>
+
+                <book book-data="books[0]">
+                    extra html here
+                </book>
+
+                <div class="horor">
+                    <book shareable book-data="books[2]"></book>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
-
-
-<book shareable item="books[2]"></book>
-<book out-of-stock item="books[1]"></book>
-
-
-<div shareable>shi b2albo</div>

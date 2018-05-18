@@ -44,7 +44,18 @@ body {
     background-color: #eee;
     padding: 10px;
     margin: 10px;
-    width: 200px;
+    width: 100px;
     height: 150px;
     border-radius: 3px;
+}
+
+.book h4 {
+    font-size: 10px;
+}
+
+small-grid {
+    display: block;
+    border: 1px solid #eee;
+    height: 200px;
+    background: red;
 }

@@ -9,5 +9,8 @@ angular.module('app')
         }).when('/books', {
             controller: 'BooksCtrl',
             templateUrl: '/views/books.html'
+        }).when('/grid', {
+            controller: 'GridCtrl',
+            templateUrl: '/views/grid.html'
         });
     }]);
